@@ -52,6 +52,7 @@ jobs:
           context: .
           file: ${{ env.CONTEXT }}/Dockerfile
           push: true
-          options: --shm-size=2gb
+          shm-size: '32G'
+          ulimit: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
